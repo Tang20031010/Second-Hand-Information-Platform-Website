@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Post Items</title>
+        <style>
+            .container{
+                width: 300px;
+            }
+            .totalContainer{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body> 
+
+            <div class = "imgContainer">
+                <img th:src="@{img/ohioLogos.jpeg}" alt="Ohio State University Logos" height="100" width="150">
+            </div>
+            <div class = "container">
+                <form th:action="@{/UserPostItem}" enctype="multipart/form-data" method="post" class="totalContainer">
+                    <div>
+                        <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Enter Your Name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Your Email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="Price"><b>Price</b></label>
+                        <input type="text" placeholder="Enter Your Price" name="price" required>
+                    </div>
+                    <div>
+                        <label for="description"><b>description</b></label>
+                        <textarea placeholder="Enter Your Price" name="description">
+                        </textarea>
+                        <!--                    <input type="text" placeholder="Enter Your Description" name="Price" required>-->
+                    </div>
+                    <div>
+                        <label>Image of Item</label>
+                        <input type="file" name="file"/>
+                    </div>
+                    <input type="submit" value="post" />
+                </form>
+            </div>
+
+
+        <div class = "totalContainer">
+            <h2>This is a page for you to post your items</h2>
+            <p>You can post and sell any used items here.</p>
+        </div>
+    </body>
+</html>

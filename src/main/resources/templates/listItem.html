@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item List</title>
+    <style>
+        form {
+                border: 3px solid #f1f1f1;
+            }
+
+        .container{
+            text-align: center;
+        }
+        
+        button {
+                background-color: rgb(172, 3, 3);
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                font-size: large;
+                font-weight: bold;
+            }
+
+    </style>
+</head>
+<body>
+    <div>
+        <button type = "button" class="letterSize"><a th:href="@{/post}">I want to post item</a></button>
+    </div>
+    <form>
+    <div class = "container" th:each="item: ${session.allItems}">
+        <a th:href="@{/showItemDetail/{id}/(id=*{item.id})}">
+            <img th:src="@{'/img/'+${item.getImage()}}" alt="A bottle" height="100%" width="100%">
+            <h1 th:utext="${item.getName()}"></h1>
+            <p th:utext="${item.getDescription()}">This is a bottle</p>
+        </a>
+
+    </div>
+    </form>
+</body>
+</html>
