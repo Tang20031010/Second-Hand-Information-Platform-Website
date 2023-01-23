@@ -10,4 +10,7 @@ class ExchangeApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void contextLoad() {
+    }
 }
