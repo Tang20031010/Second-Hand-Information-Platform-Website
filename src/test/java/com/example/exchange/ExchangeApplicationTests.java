@@ -9,8 +9,4 @@ class ExchangeApplicationTests {
     @Test
     void contextLoads() {
     }
-
-    @Test
-    void contextLoad() {
-    }
 }
